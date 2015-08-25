@@ -1,14 +1,186 @@
-.header
-  background: $black
-
 .container
   +clearfix
   margin: 0 auto
+  +tablet
+    width: (320px * 2) - 20px
+  +desktop
+    width: (320px * 3) - 20px
+  +widescreen
+    width: (320px * 4) - 20px
 
-.item
-  background: white
-  box-shadow: 0 20px 40px rgba(black, 0.4)
-  height: 440px
-  margin: 0 auto 20px
+.header
+  background: $black
+  border-bottom: 1px solid rgba(white, 0.2)
+  margin-bottom: -1px
+  padding: 80px 0
   position: relative
-  width: 300px
+  .heading
+    position: relative
+    .hello
+      @extend %section
+      color: $primary
+      margin-bottom: 20px
+    .logo
+      +replace("../images/the-barn-dor-award.png", 192px, 64px)
+      border: 1px solid white
+      height: 64px + 40px
+      margin: 0 auto
+      width: 192px + 40px
+    .tagline
+      @extend %merriweather
+      color: white
+      font-size: 20px
+      line-height: 1.25
+      margin-top: 20px
+      padding: 0 40px
+    .player
+      +animation(swoosh 1000ms 1000ms linear both)
+      +replace("../images/player.png", 143px, 128px)
+      left: 50%
+      margin: (-143px / 2) 0 0 400px
+      position: absolute
+      top: 50%
+  +tablet
+    .heading
+      .logo
+        +animation(open-curtain 2000ms ease-out both)
+        +replace("../images/the-barn-dor-award@2x.png", 383px, 127px)
+        height: 127px + 80px
+        width: 383px + 80px
+  +desktop
+    background: url("../images/barn.jpg") center no-repeat
+    background-size: cover
+    display: table
+    height: 86vh
+    min-height: 450px
+    width: 100%
+    &:before
+      +overlay
+      background: rgba(black, 0.86)
+      content: ""
+    .heading
+      display: table-cell
+      vertical-align: middle
+
+.nav
+  display: none
+
+.list
+  +clearfix
+  position: relative
+  top: -20px
+  .item
+    background: white
+    border-radius: 3px
+    box-shadow: 0 20px 40px rgba(black, 0.4)
+    height: 440px
+    margin: 0 auto 20px
+    overflow: hidden
+    position: relative
+    width: 300px
+    .photo
+      height: 200px
+      overflow: hidden
+      img
+        +transition(all 500ms)
+      &:hover
+        img
+          +transform(scale(1.1))
+    .index
+      +linear-gradient($dark, $black)
+      border-radius: 25px
+      box-shadow: 0 2px 5px rgba(black, 0.2)
+      color: white
+      display: block
+      font-size: 20px
+      font-weight: bold
+      height: 50px
+      line-height: 50px
+      margin: -25px auto 20px
+      position: relative
+      text-align: center
+      width: 50px
+    .nationality
+      @extend %section
+      line-height: 15px
+      margin-bottom: 10px
+    .name
+      @extend %merriweather
+      color: $black
+      font-size: 24px
+      line-height: 1.125
+    .description
+      margin-top: 10px
+    .watch
+      @extend %button
+      bottom: 20px
+      left: 20px
+      position: absolute
+      right: 20px
+      &:before
+        background: url(../images/icons.png) no-repeat 0 0
+        content: ""
+        height: 16px
+        left: 11px
+        position: absolute
+        top: 11px
+        width: 16px
+      &.gfycat
+        strong
+          color: darken($gfycat, 10%)
+      &.streamable
+        &:before
+          background-position: -16px 0
+        strong
+          color: $streamable
+      &.vine
+        &:before
+          background-position: -48px 0
+        strong
+          color: $vine
+      &.youtube
+        &:before
+          background-position: -32px 0
+        strong
+          color: $youtube
+  +tablet
+    margin: 0 auto
+    width: 320px * 2
+    .item
+      float: left
+      margin: 0 10px 20px
+  +desktop
+    width: 320px * 3
+  +widescreen
+    width: 320px * 4
+
+.footer
+  background: white
+  color: lighten($grey, 20%)
+  font-size: 16px
+  padding: 40px
+  // text-align: left
+  .logo
+    +replace("../images/the-barn-dor-award-grey@2x.png", 192px, 64px)
+    border: 1px solid $background
+    height: 64px + 40px
+    margin: 0 auto
+    width: 192px + 40px
+  // img
+    // height: 64px
+    // width: 192px
+  p
+    margin-top: 20px
+    a
+      color: $grey
+  +tablet
+    text-align: left
+    .logo
+      float: right
+  +desktop
+    p
+      float: left
+      margin: 28px 40px 0 0
+  +widescreen
+    p
+      margin-right: 80px
