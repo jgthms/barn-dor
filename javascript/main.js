@@ -32,7 +32,7 @@ jQuery(document).ready(function ($) {
     callback = function() {
       return loadSocialScripts();
     };
-    return setTimeout(callback, 2000);
+    return setTimeout(callback, 3000);
   });
 
 });

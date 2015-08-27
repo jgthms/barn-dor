@@ -7,6 +7,8 @@
     width: (320px * 3) - 20px
   +widescreen
     width: (320px * 4) - 20px
+  +insane
+    width: (320px * 5) - 20px
 
 .header
   background: $black
@@ -64,11 +66,20 @@
         right: 50%
   +tablet
     .heading
+      .hello
+        +animation(drop-down 1000ms ease-out both)
       .logo
-        +animation(open-curtain 2000ms ease-out both)
         +replace("../images/the-barn-dor-award@2x.png", 383px, 127px)
-        height: 127px + 80px
-        width: 383px + 80px
+        +animation(open-curtain 1500ms 750ms ease-out both)
+        height: 128px + 80px
+        left: 50%
+        margin-left: -(384px + 80px) / 2
+        // margin-top: -(128px + 80px) / 2
+        position: absolute
+        width: 384px + 80px
+      .tagline
+        +animation(drop-up 1000ms 2000ms ease-out both)
+        margin-top: 248px
   +desktop
     background: url("../images/barn.jpg") center no-repeat
     background-size: cover
@@ -175,6 +186,8 @@
     width: 320px * 3
   +widescreen
     width: 320px * 4
+  +insane
+    width: 320px * 5
 
 .footer
   background: white
