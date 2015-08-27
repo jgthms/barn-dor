@@ -12,8 +12,6 @@
 
 .header
   background: $black
-  border-bottom: 1px solid rgba(white, 0.2)
-  margin-bottom: -1px
   padding: 80px 0
   position: relative
   .heading
@@ -74,7 +72,6 @@
         height: 128px + 80px
         left: 50%
         margin-left: -(384px + 80px) / 2
-        // margin-top: -(128px + 80px) / 2
         position: absolute
         width: 384px + 80px
       .tagline
@@ -89,8 +86,15 @@
     width: 100%
     &:before
       +overlay
-      background: rgba(black, 0.86)
+      background: rgba(black, 0.71)
       content: ""
+    &:after
+      +overlay
+      background: rgba(white, 0.29)
+      bottom: -1px
+      content: ""
+      height: 1px
+      top: auto
     .heading
       display: table-cell
       vertical-align: middle
@@ -105,7 +109,7 @@
   .item
     background: white
     border-radius: 3px
-    box-shadow: 0 20px 40px rgba(black, 0.4)
+    box-shadow: 0 20px 40px rgba(black, 0.48)
     height: 440px
     margin: 0 auto 20px
     overflow: hidden
@@ -122,7 +126,7 @@
     .index
       +linear-gradient($dark, $black)
       border-radius: 25px
-      box-shadow: 0 2px 5px rgba(black, 0.2)
+      box-shadow: 0 2px 5px rgba(black, 0.29)
       color: white
       display: block
       font-size: 20px
@@ -206,6 +210,10 @@
       color: $grey
       &:hover
         color: $black
+  small
+    display: block
+    font-size: 12px
+    padding-top: 20px
   +tablet
     text-align: left
     .logo
@@ -214,6 +222,9 @@
     p
       float: left
       margin: 28px 40px 0 0
+    small
+      clear: both
+      padding-top: 40px
   +widescreen
     p
       margin-right: 80px
