@@ -30,7 +30,7 @@ jQuery(document).ready(function ($) {
   $(window).load(function() {
     var callback;
     callback = function() {
-      // return loadSocialScripts();
+      return loadSocialScripts();
     };
     return setTimeout(callback, 3000);
   });
