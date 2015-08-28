@@ -22,9 +22,9 @@ jQuery(document).ready(function ($) {
     document.body.appendChild(script);
     var callback;
     callback = function() {
-      return $('#share').fadeTo(1000, 1);
+      return $('#share').fadeTo(500, 1);
     };
-    return setTimeout(callback, 1000);
+    return setTimeout(callback, 500);
   };
 
   $(window).load(function() {
@@ -32,7 +32,7 @@ jQuery(document).ready(function ($) {
     callback = function() {
       return loadSocialScripts();
     };
-    return setTimeout(callback, 3000);
+    return setTimeout(callback, 2000);
   });
 
 });
