@@ -663,6 +663,9 @@ hgroup,
 nav {
   display: block; }
 
+iframe {
+  max-width: 100%; }
+
 .container {
   margin: 0 auto; }
   .container::after {
@@ -871,6 +874,9 @@ nav {
       left: 20px;
       position: absolute;
       right: 20px; }
+      .list .item .watch em,
+      .list .item .watch strong {
+        display: none; }
       .list .item .watch:before {
         background: url(../images/icons.png) no-repeat 0 0;
         content: "";
@@ -909,6 +915,48 @@ nav {
   @media screen and (min-width: 1640px) {
     .list {
       width: 1600px; } }
+
+.media {
+  height: 0;
+  padding-top: 56.25%;
+  position: relative; }
+  .media .media-item {
+    bottom: 0;
+    display: block;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    width: 100%; }
+  .media .gfyitem > div {
+    max-height: 100%;
+    max-width: 100%; }
+
+.controls {
+  color: white;
+  margin-bottom: 10px; }
+  .controls nav {
+    height: 32px;
+    margin: 0 auto 10px;
+    max-width: 960px; }
+    .controls nav .control {
+      background: none;
+      border: 1px solid white;
+      border-radius: 2px;
+      color: white;
+      cursor: pointer;
+      display: block;
+      float: left;
+      height: 32px;
+      line-height: 30px;
+      text-align: center;
+      width: 30%; }
+      .controls nav .control:hover {
+        background: white;
+        color: #121212; }
+      .controls nav .control + .control {
+        margin-left: 5%; }
 
 .footer {
   background: white;
@@ -953,5 +1001,26 @@ nav {
   @media screen and (min-width: 1320px) {
     .footer p {
       margin-right: 80px; } }
+
+.modal {
+  bottom: 0;
+  display: block;
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+  background: rgba(0, 0, 0, 0.86);
+  display: none;
+  text-align: center; }
+  .modal .modal-content {
+    margin: 0 auto;
+    max-width: 960px;
+    padding-top: 10px;
+    position: relative;
+    vertical-align: top; }
+    .modal .modal-content video {
+      display: inline-block; }
+  html.modal-open .modal {
+    display: block; }
 
 /*# sourceMappingURL=main.css.map */

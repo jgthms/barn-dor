@@ -154,6 +154,9 @@
       left: 20px
       position: absolute
       right: 20px
+      em,
+      strong
+        display: none
       &:before
         background: url(../images/icons.png) no-repeat 0 0
         content: ""
@@ -193,6 +196,44 @@
   +insane
     width: 320px * 5
 
+.media
+  height: 0
+  padding-top: 56.25%
+  position: relative
+  .media-item
+    +overlay
+    height: 100%
+    width: 100%
+  .gfyitem
+    & > div
+      max-height: 100%
+      max-width: 100%
+
+.controls
+  color: white
+  margin-bottom: 10px
+  nav
+    height: 32px
+    margin: 0 auto 10px
+    max-width: 960px
+    .control
+      background: none
+      border: 1px solid white
+      border-radius: 2px
+      color: white
+      cursor: pointer
+      display: block
+      float: left
+      height: 32px
+      line-height: 30px
+      text-align: center
+      width: 30%
+      &:hover
+        background: white
+        color: $black
+      & + .control
+        margin-left: 5%
+
 .footer
   background: white
   color: lighten($grey, 20%)
@@ -228,3 +269,19 @@
   +widescreen
     p
       margin-right: 80px
+
+.modal
+  +overlay(fixed)
+  background: rgba(black, 0.86)
+  display: none
+  text-align: center
+  .modal-content
+    margin: 0 auto
+    max-width: 960px
+    padding-top: 10px
+    position: relative
+    vertical-align: top
+    video
+      display: inline-block
+  html.modal-open &
+    display: block
